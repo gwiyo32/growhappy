@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ストーリーを探す｜Grow Happy けいけんデータベース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Quicksand:wght@500;600;700&display=swap">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="search" data-area="member">
+<header id="site-header"></header>
+
+<main class="container">
+
+<section class="search-panel">
+<span class="blob" style="top:-60px;right:-40px;width:180px;height:180px;background:var(--butter)" aria-hidden="true"></span>
+<div class="greet">
+<p class="hi">こんにちは、<span id="greet-name"></span>さん</p>
+<h1>きょうは何を探しますか？</h1>
+</div>
+<form class="search-box" id="search-form" role="search">
+<label for="q" class="sr-only">ことばで探す</label>
+<input id="q" name="q" type="search" placeholder="気になっていることを入力（例：うそ、不登校）" autocomplete="off">
+<button type="submit" class="btn btn-primary" aria-label="検索する"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span class="btn-label">さがす</span></button>
+</form>
+<div class="quick-words" id="quick-words"><span>よく探されることば</span></div>
+</section>
+
+<div class="search-layout">
+<aside class="card filters" aria-label="しぼりこみ">
+<div class="filters-head"><h2>しぼりこみ</h2><button type="button" class="clear-btn" id="clear-btn">条件をクリア</button></div>
+<div class="filter-group"><p>テーマ</p><div class="chip-row" id="theme-chips"></div></div>
+<div class="filter-group"><p>子どもの年代</p><div class="chip-row" id="age-chips"></div></div>
+<div class="filter-group"><label for="step-select">12 Steps</label><div class="select-wrap"><select class="select" id="step-select"></select></div></div>
+<div class="filter-group"><p>保存</p><div class="chip-row"><button type="button" class="chip" id="saved-chip" aria-pressed="false">保存したストーリーだけ</button></div></div>
+</aside>
+
+<section class="results" aria-label="検索結果">
+<div class="results-head"><p class="count" aria-live="polite"><strong id="count">0</strong> 件のストーリー</p></div>
+<div class="result-grid" id="result-grid"></div>
+<div class="card empty" id="empty" hidden><p id="empty-text"></p></div>
+</section>
+</div>
+
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
