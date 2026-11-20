@@ -1,91 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>growhappy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", "Segoe UI", sans-serif;
-      background-color: #fffafc;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      margin: 1em 0 0.5em;
-      font-size: 1.6em;
-      color: #ff6fb3;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      width: 100%;
-      max-width: 400px;
-      gap: 6px;
-      padding: 0 10px 20px;
-      box-sizing: border-box;
-    }
-
-    .tile {
-      background: #ffe8f0;
-      color: #d63384;
-      border-radius: 20px;
-      padding: 16px;
-      aspect-ratio: 1 / 1;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.2s ease;
-    }
-
-    .tile:hover {
-      transform: scale(1.05);
-    }
-
-    .tile svg {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 6px;
-      fill: #ff5c9f;
-    }
-
-    .tile span {
-      font-size: 0.85em;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grow Happy けいけんデータベース</title>
+<meta name="description" content="里親・養育者のみなさんが実際に経験したことと、そのときの関わり方を集めたデータベースです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Quicksand:wght@500;600;700&display=swap">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body data-page="home" data-area="guest">
+<header id="site-header"></header>
 
-  <div class="grid">
-    <a class="tile" href="#"><svg viewBox="0 0 24 24"><path d="M12 2L2 7h20L12 2zm0 3.19L17.6 7H6.4L12 5.19zM4 9h16v10H4V9z"/></svg><span>おしらせ</span></a>
-    <a class="tile" href="#"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h14v-2H7v2zm0-4h14v-2H7v2zm0-6v2h14V7H7z"/></svg><span>メニュー</span></a>
-    <a class="tile" href="#"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4S8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>プロフィール</span></a>
-    <a class="tile" href="#"><svg viewBox="0 0 24 24"><path d="M9 16h6v-2H9v2zm-6 0h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2v-2H3v2zm4 4h10v-2H7v2zm0 4h10v-2H7v2zm0-8h10v-2H7v2z"/></svg><span>履歴</span></a>
-    <a class="tile" href="#"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4H8v2H4v14h16V6zM9 6h6v2H9V6z"/></svg><span>つかいかた</span></a>
-    <a class="tile" href="#"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-2.83-.48-5-2.94-5-5.93h2c0 2.21 1.79 4 4 4v2c0 .34-.02.68-.05 1.01zM11 6V4c2.21 0 4 1.79 4 4h-2c0-1.1-.9-2-2-2zm-1 4H8v2h2v2h2v-2h2v-2h-2V8h-2v2z"/></svg><span>ヘルプ</span></a>
-  </div>
+<main class="container">
 
-  <script>
-    const LIFF_URL = "https://liff.line.me/ここにあなたのLIFF URL";
+<section class="hero">
+<span class="blob" style="top:-50px;right:-40px;width:180px;height:180px;background:var(--butter)" aria-hidden="true"></span>
+<span class="blob" style="bottom:-70px;left:-50px;width:160px;height:160px;background:var(--pink)" aria-hidden="true"></span>
+<div class="hero-text">
+<span class="pill">里親・養育者のための経験データベース</span>
+<h1><span class="nw">ほかのおうちの</span><span class="nw">「あのとき」が、</span><span class="nw">きょうのヒントに。</span></h1>
+<p class="lead">里親・養育者のみなさんが実際に経験したことと、そのときの関わり方を集めました。ふだんの言葉で、近い経験を探せます。</p>
+<div class="hero-actions">
+<a class="btn btn-primary btn-lg" href="signup.html"><svg class="icon-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-4.6-8-10.2C4 6.6 6.4 5 8.6 5c1.6 0 2.8.9 3.4 2 .6-1.1 1.8-2 3.4-2C17.6 5 20 6.6 20 9.8 20 15.4 12 20 12 20z" fill="#4A2C22"/></svg>無料で会員登録</a>
+<a class="btn btn-white btn-lg" href="plans.html">会員でできること</a>
+</div>
+</div>
+<div class="hero-art">
+<svg viewBox="0 0 300 170" role="img" aria-label="大人と子どもと赤ちゃんの笑顔のイラスト（仮）">
+<ellipse cx="150" cy="158" rx="130" ry="10" fill="#F8D6C4"/>
+<circle cx="92" cy="86" r="52" fill="#FFD8BE"/>
+<path d="M44 74c6-30 30-44 52-42 22 2 40 18 46 38-18-10-40-16-62-6-14 6-26 10-36 10z" fill="#8C5A44"/>
+<circle cx="76" cy="92" r="4.5" fill="#4A3B35"/><circle cx="108" cy="92" r="4.5" fill="#4A3B35"/>
+<circle cx="64" cy="106" r="8" fill="#F7A9A0" opacity="0.7"/><circle cx="120" cy="106" r="8" fill="#F7A9A0" opacity="0.7"/>
+<path d="M82 108q10 9 20 0" fill="none" stroke="#4A3B35" stroke-width="3" stroke-linecap="round"/>
+<circle cx="190" cy="104" r="38" fill="#FFE1C9"/>
+<path d="M154 98c2-24 22-36 40-34 16 2 30 14 32 30-10-8-24-12-38-10-14 2-24 10-34 14z" fill="#5C4033"/>
+<circle cx="178" cy="108" r="3.8" fill="#4A3B35"/><circle cx="202" cy="108" r="3.8" fill="#4A3B35"/>
+<circle cx="169" cy="119" r="6.5" fill="#F7A9A0" opacity="0.7"/><circle cx="211" cy="119" r="6.5" fill="#F7A9A0" opacity="0.7"/>
+<path d="M183 120q7 7 14 0" fill="none" stroke="#4A3B35" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="250" cy="124" r="26" fill="#FFE8D6"/>
+<path d="M248 98q4 -8 10 -4" fill="none" stroke="#8C5A44" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="242" cy="126" r="3" fill="#4A3B35"/><circle cx="258" cy="126" r="3" fill="#4A3B35"/>
+<circle cx="236" cy="134" r="5" fill="#F7A9A0" opacity="0.7"/><circle cx="264" cy="134" r="5" fill="#F7A9A0" opacity="0.7"/>
+<path d="M246 135q4 4 8 0" fill="none" stroke="#4A3B35" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M150 30c-4-8-16-6-14 3 1 6 14 13 14 13s13-7 14-13c2-9-10-11-14-3z" fill="#F4977E"/>
+<path d="M232 44l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#F6C453"/>
+<path d="M30 30l2.5 5.5 5.5 2.5-5.5 2.5-2.5 5.5-2.5-5.5-5.5-2.5 5.5-2.5z" fill="#F6C453"/>
+</svg>
+<span class="note">※仮イラスト（Grow Happyさんのアイコンに差し替え）</span>
+</div>
+</section>
 
-    async function main() {
-      await liff.init({ liffUrl: LIFF_URL });
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      }
-    }
+<section class="card search-teaser" aria-label="ことばで探す">
+<p class="label"><span class="round-icon" style="background:var(--butter);color:var(--butter-ink)"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>ことばで探してみる</p>
+<a class="fake-input" href="signup.html">「不登校」「うそ」「手が出る」など</a>
+<p class="lock-note"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>あらすじはどなたでも読めます。本文・検索・コメントは、会員登録（無料）のあとにご利用いただけます。</p>
+</section>
 
-    main();
-  </script>
+<section class="stack">
+<div class="section-head">
+<h2 class="section-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-4.6-8-10.2C4 6.6 6.4 5 8.6 5c1.6 0 2.8.9 3.4 2 .6-1.1 1.8-2 3.4-2C17.6 5 20 6.6 20 9.8 20 15.4 12 20 12 20z" fill="#F4977E"/></svg>テーマから見る</h2>
+<a href="themes.html">すべて見る</a>
+</div>
+<div class="theme-grid" id="theme-grid"></div>
+</section>
 
+<section class="stack">
+<div class="section-head">
+<div class="stack" style="gap:2px">
+<h2 class="section-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-4.6-8-10.2C4 6.6 6.4 5 8.6 5c1.6 0 2.8.9 3.4 2 .6-1.1 1.8-2 3.4-2C17.6 5 20 6.6 20 9.8 20 15.4 12 20 12 20z" fill="#F4977E"/></svg>ストーリーをのぞいてみる</h2>
+<p class="note">あらすじは、どなたでも読めます。</p>
+</div>
+</div>
+<div class="synopsis-grid" id="synopsis-list"></div>
+</section>
+
+<section class="steps-band">
+<div class="txt">
+<span class="pill">12 STEPS</span>
+<h2 class="section-title">愛着をはぐくむ子育てスキル</h2>
+<p>「子どもの話を聴く」「上手に待つ」など、12のスキルに分けています。ストーリーには、どのスキルに関わる経験かが付いています。</p>
+</div>
+<a class="btn btn-white steps-more" style="color:var(--mint-ink)" href="themes.html#steps">12 Stepsをくわしく見る</a>
+<ol class="step-strip" id="step-strip" aria-label="12のスキル"></ol>
+</section>
+
+<section class="stack">
+<h2 class="section-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-4.6-8-10.2C4 6.6 6.4 5 8.6 5c1.6 0 2.8.9 3.4 2 .6-1.1 1.8-2 3.4-2C17.6 5 20 6.6 20 9.8 20 15.4 12 20 12 20z" fill="#F4977E"/></svg>こんなふうに使えます</h2>
+<ol class="howto">
+<li><span class="n t-daily">1</span><span>気になっていることを、ふだんの言葉で入れてみる</span></li>
+<li><span class="n t-testing">2</span><span>子どもの年代やテーマで、近い経験にしぼる</span></li>
+<li><span class="n t-school">3</span><span>悩み・対応・その後の様子まで読んで、ヒントにする</span></li>
+</ol>
+</section>
+
+<section class="card cta">
+<span class="blob" style="top:-40px;left:-36px;width:130px;height:130px;background:var(--peach)" aria-hidden="true"></span>
+<span class="blob" style="bottom:-50px;right:-30px;width:150px;height:150px;background:var(--mint)" aria-hidden="true"></span>
+<p class="msg">ひとりで悩まなくて大丈夫。<br>先輩たちの経験を、のぞいてみませんか？</p>
+<a class="btn btn-primary btn-lg" href="signup.html">無料で会員登録</a>
+<p class="note">すでに登録済みの方は <a href="signup.html#login">ログイン</a></p>
+</section>
+
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
